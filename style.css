@@ -1,0 +1,126 @@
+:root {
+  --bg: #f9f9f9;
+  --fg: #222;
+  --card-bg: #fff;
+  --primary: #4f46e5;
+  --accent: #22c55e;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --font: "Segoe UI", Roboto, sans-serif;
+  --transition: 0.3s ease;
+}
+
+body.dark {
+  --bg: #121212;
+  --fg: #f3f3f3;
+  --card-bg: #1e1e1e;
+  --primary: #818cf8;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+#app {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 400px;
+  width: 90%;
+  box-sizing: border-box;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+#question {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  outline: none;
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--fg);
+  transition: border var(--transition), color var(--transition);
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary);
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin: 0.5rem 0.25rem;
+  transition: background var(--transition);
+}
+
+button:hover {
+  background-color: #4338ca;
+}
+
+#feedback {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+#points {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+#themeToggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--fg);
+  transition: color var(--transition);
+}
+
+footer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  text-align: center;
+}
